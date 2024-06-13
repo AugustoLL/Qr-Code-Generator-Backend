@@ -4,6 +4,7 @@ const qrCodeRoutes = require('./routes/qrCodeRoutes');
 const limiter = require('./middlewares/rateLimiter');
 const { PORT } = require('./config');
 const logger = require('./logger');
+const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 
@@ -17,10 +18,7 @@ app.use(limiter);
 app.use('/api', qrCodeRoutes);
 
 // Error handler
-app.use((err, req, res, next) => {
-    logger.error(err.stack);
-    res.status(500).json({ error: 'Internal server error' });
-});
+app.use(errorHandler);
 
 // Start server
 app.listen(PORT, () => {
