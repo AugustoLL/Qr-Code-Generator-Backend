@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Install development dependencies
+RUN npm install --only=dev
+
 # Expose the port the app runs on
 EXPOSE 3000
 
