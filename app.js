@@ -36,6 +36,7 @@ app.get('/generate', async (req, res) => {
     const url = req.query.url // Get URL from query parameter
     const format = req.query.format || 'png' // Get format from query parameter
     const size = req.query.size || 200 // Get size from query parameter
+    const errorCorrectionLevel = req.query.errorCorrectionLevel || 'M' // Get error correction level from query parameter
 
     // Validate URL
     if (!url || !validUrl.isUri(url)) {
