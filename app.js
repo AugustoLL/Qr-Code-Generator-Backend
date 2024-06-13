@@ -3,17 +3,26 @@ const QRCode = require('qrcode');
 const cache = require('memory-cache');
 const validUrl = require('valid-url');
 const morgan = require('morgan');
+const rateLimit = require('express-rate-limit');
 
 
 // Create express app
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Apply rate limiting middleware
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: 'Too many requests, please try again later.', // message sent when limit is exceeded
+});
+
 
 // Middleware to parse JSON and urlencoded request bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
+app.use(limiter);
 
 
 // Cache expiration time in seconds
