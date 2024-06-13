@@ -9,6 +9,9 @@ const rateLimit = require('express-rate-limit');
 // Create express app
 const app = express();
 const PORT = process.env.PORT || 3000;
+const CACHE_EXPIRATION_TIME = process.env.CACHE_EXPIRATION || 3600 * 1000; // Cache expiration time in seconds
+const MAX_CACHE_ENTRIES = process.env.MAX_CACHE_ENTRIES || 100; // Maximum number of entries in the cache
+let cacheSize = 0;
 
 // Apply rate limiting middleware
 const limiter = rateLimit({
@@ -24,12 +27,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(limiter);
 
-
-// Cache expiration time in seconds
-const CACHE_EXPIRATION_TIME = 3600 * 1000; // 1 hour
-// Maximum number of entries in the cache
-const MAX_CACHE_ENTRIES = 100;
-let cacheSize = 0;
 
 const manageCacheSize = () => {
   if (cacheSize > MAX_CACHE_ENTRIES) {
