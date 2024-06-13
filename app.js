@@ -2,6 +2,7 @@ const express = require('express');
 const QRCode = require('qrcode');
 const cache = require('memory-cache');
 const validUrl = require('valid-url');
+const morgan = require('morgan');
 
 
 // Create express app
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware to parse JSON and urlencoded request bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'));
 
 
 // Cache expiration time in seconds
@@ -55,6 +57,12 @@ app.get('/generate', async (req, res) => {
       return res.status(400).json({ error: 'Invalid size. Valid values are between 50 and 1080' });
     }
 
+    // Validate error correction level
+    // Check if error correction level is one of L, M, Q, H
+    if (!['L', 'M', 'Q', 'H'].includes(errorCorrectionLevel)) {
+      return res.status(400).json({ error: 'Invalid error correction level. Valid values are L, M, Q, H' });
+    }
+
     // Generate cache key based on URL, format and size
     const cacheKey = `${url}-${format}-${size}`;
 
@@ -63,7 +71,11 @@ app.get('/generate', async (req, res) => {
 
     if (!qrCode) {
       // Generate QR code
-      qrCode = await QRCode.toDataURL(url);
+      qrCode = await QRCode.toDataURL(url, {
+        type: format,
+        width: size,
+        errorCorrectionLevel: errorCorrectionLevel
+      });
 
       // Cache size management
       manageCacheSize();
