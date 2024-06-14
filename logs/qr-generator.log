@@ -160,3 +160,15 @@
 2024-06-14T14:34:37.665Z [32minfo[39m: Server is running on port: 3000
 2024-06-14T14:35:27.126Z [32minfo[39m: Server is running on port: 3000
 2024-06-14T14:35:58.461Z [32minfo[39m: Server is running on port: 3000
+2024-06-14T14:39:27.453Z [32minfo[39m: Server is running on port: 3000
+2024-06-14T14:39:30.387Z [31merror[39m: Error: The URL is required
+    at validateInputs (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\services\qrCodeService.js:95:11)
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:21:5)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
