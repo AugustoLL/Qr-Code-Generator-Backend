@@ -21,12 +21,12 @@ This is a simple QR code generator made with Node.js and Express.
 ## Features
 
 - Generate QR codes with customizable options:
- - URL to encode
- - Image format (PNG, JPEG, WebP)
- - Size
- - Error correction level
- - Dark and light colors
- - Logo overlay with customizable size ratio
+  - URL to encode
+  - Image format (PNG, JPEG, WebP)
+  - Size
+  - Error correction level
+  - Dark and light colors
+  - Logo overlay with customizable size ratio
 - Cache QR codes for improved performance
 - Clear cache manually through API endpoint
 
