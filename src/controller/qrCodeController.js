@@ -1,11 +1,19 @@
 const { generateQRCode, validateInputs } = require('../services/qrCodeService');
 const { clearCache } = require('../cache');
 const { ValidationError, InternalServerError, AppError } = require("../utils/errors");
+const qrCodeSchema = require('../validation/qrCodeSchema');
 const logger = require('../utils/logger');
 
 
 const getQRCode = async (req, res, next) => {
   try {
+
+    // Validate query parameters
+    const { error, value } = qrCodeSchema.validate(req.query);
+    if (error) {
+      throw new ValidationError('Validation failed: ' + error.details.map(d => d.message).join(', '));
+    }
+
     // Get URL, format, size, error correction level, dark color and light color, logo URL and logo size ratio from query parameters
     const { 
       url,
@@ -37,8 +45,7 @@ const getQRCode = async (req, res, next) => {
     res.setHeader('Content-Type', mimeType);
 
     // Send the QR code as a response
-    // res.send(`<img src="${qrCode}" alt="qrcode"/>`);
-    res.send(Buffer.from(qrCode.split(',')[1], 'base64'));
+    res.status(200).send(Buffer.from(qrCode.split(',')[1], 'base64'));
 
   } catch (error) {
     if (!(error instanceof AppError)) {

@@ -256,3 +256,49 @@
 2024-06-14T18:16:42.511Z [32minfo[39m: QR code found in cache for: https://www.linkedin.com/in/augusto-lombino-218bba18b
 2024-06-14T18:16:47.924Z [32minfo[39m: QR code found in cache for: https://www.linkedin.com/in/augusto-lombino-218bba18b
 2024-06-14T18:17:02.089Z [32minfo[39m: QR code generated successfully for: https://www.linkedin.com/in/augusto-lombino-218bba18b
+2024-06-14T18:40:42.978Z [31merror[39m: Error: Validation failed: "url" is not allowed to be empty
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:14:13)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:47:12)
+2024-06-14T18:41:42.850Z [31merror[39m: Error: Validation failed: The URL must be a valid URL
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:14:13)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:47:12)
+2024-06-14T18:41:55.092Z [32minfo[39m: QR code generated successfully for: https://youtube.com
+2024-06-14T18:41:58.119Z [31merror[39m: Error: Validation failed: The size must be a number
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:14:13)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:47:12)
+2024-06-14T18:42:11.641Z [31merror[39m: Error: Validation failed: The size must be positive
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:14:13)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:47:12)
+2024-06-14T18:42:29.780Z [32minfo[39m: QR code generated successfully for: https://youtube.com
