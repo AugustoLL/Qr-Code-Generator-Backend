@@ -6,7 +6,6 @@ const { getCache, setCache, manageCacheSize, clearCache } = require('../cache');
 const { CACHE_EXPIRATION_TIME, MAX_CACHE_SIZE } = require('../config');
 const { ValidationError, InternalServerError } = require("../utils/errors");
 const qrCodeSchema = require('../validation/qrCodeSchema');
-const logger = require('../logger');
 
 // Generate QR code and cache it if it doesn't exist in the cache
 const generateQRCode = async (url, options) => {
