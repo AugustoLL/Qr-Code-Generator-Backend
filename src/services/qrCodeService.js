@@ -5,6 +5,8 @@ const validUrl = require('valid-url');
 const Joi = require('joi');
 const { getCache, setCache, manageCacheSize, clearCache } = require('../cache');
 const { CACHE_EXPIRATION_TIME, MAX_CACHE_SIZE } = require('../config');
+const { ValidationError, InternalServerError } = require("../utils/errors");
+
 
 const schema = Joi.object({
   url: Joi.string().uri().required().messages({
@@ -127,7 +129,7 @@ const validateInputs = (url, format, size, errorCorrectionLevel, colors, logoUrl
 
   if (error) {
     const  errorMessages = error.details.map((detail) => detail.message).join(', ');
-    throw new Error(errorMessages);
+    throw new ValidationError(errorMessages);
   }
   
   return value;

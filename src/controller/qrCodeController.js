@@ -1,5 +1,7 @@
 const { generateQRCode, validateInputs } = require('../services/qrCodeService');
 const { clearCache } = require('../cache');
+const { ValidationError, InternalServerError, AppError } = require("../utils/errors");
+
 
 const getQRCode = async (req, res, next) => {
   try {
@@ -36,9 +38,12 @@ const getQRCode = async (req, res, next) => {
     // Send the QR code as a response
     // res.send(`<img src="${qrCode}" alt="qrcode"/>`);
     res.send(Buffer.from(qrCode.split(',')[1], 'base64'));
+
   } catch (error) {
-    console.error('Error generating QR code:', error);
-    res.status(500).json({ error: error.message});
+    if (!(error instanceof AppError)) {
+      error = new InternalServerError("Error generating QR code");
+    }
+    next(error);
   }
 };
 
