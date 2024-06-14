@@ -1,17 +1,22 @@
 # QR Generator
 
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://opensource.org/licenses/MIT)
-[![Build Status](https://travis-ci.com/rafael-schaefer/qr-generator.svg?branch=master)](https://travis-ci.com/rafael-schaefer/qr-generator)
-[![Coverage Status](https://coveralls.io/repos/github/rafael-schaefer/qr-generator/badge.svg)](https://coveralls.io/github/rafael-schaefer/qr-generator)
-[![Maintainability](https://api.codeclimate.com/v1/badges/c5c5ea0c6b0f1f62f7e6f7e4aeeb2c3e)](https://codeclimate.com/github/rafael-schaefer/qr-generator)
+[![Node.js Version](https://img.shields.io/node/v/package-name.svg)](https://nodejs.org/)
+[![npm Version](https://img.shields.io/npm/v/package-name.svg)](https://www.npmjs.com/package/package-name)
 
 This is a simple QR code generator made with Node.js and Express.
 
 ## Features
 
-- Generate QR codes from URLs
-- Support for different formats and sizes
-- Caching to improve performance
+- Generate QR codes with customizable options:
+- - URL to encode
+- - Image format (PNG, JPEG, WebP)
+- - Size
+- - Error correction level
+- - Dark and light colors
+- - Logo overlay with customizable size ratio
+- Cache QR codes for improved performance
+- Clear cache manually through API endpoint
 
 ## Installation
 
@@ -28,8 +33,45 @@ This is a simple QR code generator made with Node.js and Express.
 
 3. Start the server:
     ```sh
-    node app.js
+    npm start
     ```
+
+The server will start on http://localhost:3000 by default.
+
+## API Endpoints
+
+### Generate QR Code
+
+```sh
+GET /api/generate
+```
+
+#### Parameters
+
+`url`: URL to encode in the QR code (required)
+`format`: Image format (png, jpeg, webp; default: png)
+`size`: Size of the QR code image (default: 200)
+`errorCorrectionLevel`: Error correction level (L, M, Q, H; default: M)
+`darkColor`: Dark color of the QR code in hex format (default: #000000)
+`lightColor`: Light color of the QR code in hex format (default: #FFFFFF)
+`logoUrl`: URL of the logo image to overlay on the QR code (optional)
+`logoSizeRatio`: Size ratio of the logo relative to the QR code (default: 0.2)
+
+#### Example
+
+```sh
+http://localhost:3000/api/generate?url=https://example.com&format=png&size=300&errorCorrectionLevel=M&darkColor=%230000FF&lightColor=%23FFFF00
+```
+
+### Clear Cache
+
+```sh
+GET /api/clear-cache
+```
+
+#### Description
+
+Clears the cached QR codes stored for improved performance.
 
 ## Usage
 
