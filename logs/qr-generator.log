@@ -154,3 +154,9 @@
     at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
     at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
 2024-06-14T14:29:07.106Z [32minfo[39m: Server is running on port: 3000
+2024-06-14T14:30:37.581Z [32minfo[39m: Server is running on port: 3000
+2024-06-14T14:31:37.841Z [32minfo[39m: Server is running on port: 3000
+2024-06-14T14:33:03.345Z [32minfo[39m: Server is running on port: 3000
+2024-06-14T14:34:37.665Z [32minfo[39m: Server is running on port: 3000
+2024-06-14T14:35:27.126Z [32minfo[39m: Server is running on port: 3000
+2024-06-14T14:35:58.461Z [32minfo[39m: Server is running on port: 3000
