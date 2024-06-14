@@ -47,6 +47,8 @@ http://localhost:3000/api/generate?url=https://github.com/AugustoLL/Qr-Code-Gene
 http://localhost:3000/api/generate?url=https://youtube.com&format=png&size=500&errorCorrectionLevel=H&darkColor=%23FF0000&lightColor=%23000000&logoUrl=https://clipart-library.com/images_k/youtube-transparent-png/youtube-transparent-png-15.png
 ```
 
+<img src="examples/youtubeQRCode.png" alt="YouTube QR Code" width="400" />
+
 ![YouTube QR Code](examples/youtubeQRCode.png)
 
 ### Example 3: White and Light-Blue QR Code with LinkedIn Logo
