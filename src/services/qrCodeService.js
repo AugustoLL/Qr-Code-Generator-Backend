@@ -84,10 +84,10 @@ const validateInputs = (url, format, size, errorCorrectionLevel, colors, logoUrl
   }
 
   // Validate format
-  // Check if format is one of png, svg, jpeg, jgp, webp
-  const validFormats = ['png', 'svg', 'jpeg', 'jpg', 'webp'];
+  // Check if format is one of png, jpeg, jgp
+  const validFormats = ['png', 'jpeg', 'jpg'];
   if (!validFormats.includes(format)) {
-    return { error: 'Invalid format. Valid values are png, svg, jpeg, jgp, webp' };
+    return { error: 'Invalid format. Valid values are png, jpeg, jgp' };
   }
 
   // Validate size
