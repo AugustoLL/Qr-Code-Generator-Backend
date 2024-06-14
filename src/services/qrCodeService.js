@@ -6,44 +6,7 @@ const Joi = require('joi');
 const { getCache, setCache, manageCacheSize, clearCache } = require('../cache');
 const { CACHE_EXPIRATION_TIME, MAX_CACHE_SIZE } = require('../config');
 const { ValidationError, InternalServerError } = require("../utils/errors");
-
-
-const schema = Joi.object({
-  url: Joi.string().uri().required().messages({
-    'string.uri': 'The URL must be a valid URL',
-    'any.required': 'The URL is required',
-  }),
-  format: Joi.string().valid('png', 'jpg', 'jpeg').default('png').messages({
-    'any.only': 'The format must be png, jpg or jpeg',
-  }),
-  size: Joi.number().positive().min(100).max(1080).default(200).messages({
-    'number.base': 'The size must be a number',
-    'number.positive': 'The size must be positive',
-    'number.min': 'The size must be at least 100',
-    'number.max': 'The size must be at most 1080',
-  }),
-  errorCorrectionLevel: Joi.string().valid('L', 'M', 'Q', 'H').default('M').messages({
-    'any.only': 'The error correction level must be L, M, Q or H',
-  }),
-  color: Joi.object({
-    dark: Joi.string().pattern(/^#([0-9A-Fa-f]{3}){1,2}$/i).default('#000000').messages({
-      'string.pattern.base': 'The dark color must be a valid hex color',
-    }),
-    light: Joi.string().pattern(/^#([0-9A-Fa-f]{3}){1,2}$/i).default('#FFFFFF').messages({
-      'string.pattern.base': 'The light color must be a valid hex color',
-    }),
-  }),
-  logoUrl: Joi.string().uri().optional().messages({
-    'string.uri': 'The logo URL must be a valid URL',
-    'string.base': 'The logo URL must be a string',
-  }),
-  logoSizeRatio: Joi.number().positive().min(0.1).max(1).default(0.3).messages({
-    'number.base': 'The logo size ratio must be a number',
-    'number.positive': 'The logo size ratio must be positive',
-    'number.min': 'The logo size ratio must be at least 0.1',
-    'number.max': 'The logo size ratio must be at most 1',
-  }),
-});
+const qrCodeSchema = require('../validation/qrCodeSchema');
 
 // Generate QR code and cache it if it doesn't exist in the cache
 const generateQRCode = async (url, options) => {
@@ -117,7 +80,7 @@ const addLogoToQRCode = async (qrCodeBuffer, logoUrl, logoSizeRatio, format, siz
 }
 
 const validateInputs = (url, format, size, errorCorrectionLevel, colors, logoUrl, logoSizeRatio) => {
-  const { error, value } = schema.validate({
+  const { error, value } = qrCodeSchema.validate({
     url,
     format,
     size,
