@@ -21,12 +21,12 @@ This is a simple QR code generator made with Node.js and Express.
 ## Features
 
 - Generate QR codes with customizable options:
-- - URL to encode
-- - Image format (PNG, JPEG, WebP)
-- - Size
-- - Error correction level
-- - Dark and light colors
-- - Logo overlay with customizable size ratio
+ - URL to encode
+ - Image format (PNG, JPEG, WebP)
+ - Size
+ - Error correction level
+ - Dark and light colors
+ - Logo overlay with customizable size ratio
 - Cache QR codes for improved performance
 - Clear cache manually through API endpoint
 
@@ -60,14 +60,14 @@ GET /api/generate
 
 #### Parameters
 
-`url`: URL to encode in the QR code (required)
-`format`: Image format (png, jpeg, webp; default: png)
-`size`: Size of the QR code image (default: 200)
-`errorCorrectionLevel`: Error correction level (L, M, Q, H; default: M)
-`darkColor`: Dark color of the QR code in hex format (default: #000000)
-`lightColor`: Light color of the QR code in hex format (default: #FFFFFF)
-`logoUrl`: URL of the logo image to overlay on the QR code (optional)
-`logoSizeRatio`: Size ratio of the logo relative to the QR code (default: 0.2)
+- `url`: URL to encode in the QR code (required)
+- `format`: Image format (png, jpeg, webp; default: png)
+- `size`: Size of the QR code image (default: 200)
+- `errorCorrectionLevel`: Error correction level (L, M, Q, H; default: M)
+- `darkColor`: Dark color of the QR code in hex format (default: #000000)
+- `lightColor`: Light color of the QR code in hex format (default: #FFFFFF)
+- `logoUrl`: URL of the logo image to overlay on the QR code (optional)
+- `logoSizeRatio`: Size ratio of the logo relative to the QR code (default: 0.2)
 
 #### Example
 
