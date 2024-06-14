@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/node/v/package-name.svg)](https://nodejs.org/)
-[![npm Version](https://img.shields.io/npm/v/package-name.svg)](https://www.npmjs.com/package/package-name)
+[![npm Version](https://img.shields.io/npm/v/package-name.svg)](10.3.0)
 
 This is a simple QR code generator made with Node.js and Express.
 
