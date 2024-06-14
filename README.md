@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-v20.11.0-green?style=for-the-badge&logo=node.js)](https://nodejs.org/)
 [![npm Version](https://img.shields.io/badge/npm-v10.3.0-red?style=for-the-badge&logo=npm)](https://www.npmjs.com/)
-[![axios Version](https://img.shields.io/badge/axios-v1.7.2-blue?style=for-the-badge&logo=axios)](https://www.npmjs.com/package/axios/v/1.7.2)]
+[![axios Version](https://img.shields.io/badge/axios-v1.7.2-blue?style=for-the-badge&logo=axios)](https://www.npmjs.com/package/axios/v/1.7.2)
 
 This is a simple QR code generator made with Node.js and Express.
 
