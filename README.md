@@ -39,7 +39,7 @@ This is a simple QR code generator made with Node.js and Express.
 http://localhost:3000/api/generate?url=https://github.com/AugustoLL/Qr-Code-Generator-Backend&format=png&size=500&errorCorrectionLevel=H
 ```
 
-![Github repo QR Code](examples/githubRepoQRCode.png)
+<img src="examples/githubRepoQRCode.png" alt="Github repo QR Code" width="300" />
 
 ### Example 2: Red and Black QR Code with YouTube Logo
 
@@ -55,7 +55,7 @@ http://localhost:3000/api/generate?url=https://youtube.com&format=png&size=500&e
 http://localhost:3000/api/generate?url=https://www.linkedin.com/in/augusto-lombino-218bba18b&format=png&size=500&errorCorrectionLevel=H&darkColor=%231686B0&lightColor=%23FFFFFF&logoUrl=https://sydneysocialmediamanagers.com.au/wp-content/uploads/2017/03/Linkedin-logo.png&logoSizeRatio=0.2
 ```
 
-![LinkedIn Profile QR Code](examples/linkedInQRCode.png)
+<img src="examples/linkedInQRCode.png" alt="LinkedIn Profile QR Code" width="300" />
 
 ## Installation
 
