@@ -137,3 +137,31 @@ To generate a QR code, open your browser and navigate to:
 http://localhost:3000/generate?url=YOUR_URL&format=png&size=200
 
 Replace `YOUR_URL` with the URL you want to encode.
+
+## Docker Setup
+
+### Build Docker Image
+
+```bash
+docker build -t qr-code-generator .
+```
+
+### Run Docker Container
+
+```bash
+docker run --env-file .env -p 3000:3000 qr-code-generator
+```
+
+Alternatively, you can pass individual environment variables directly:
+
+```bash
+docker run -e NODE_ENV=production -e API_KEY=your_api_key_here -p 3000:3000 qr-code-generator
+```
+
+### Docker Compose
+
+To use Docker Compose, run the following command:
+
+```bash
+docker-compose up
+```
