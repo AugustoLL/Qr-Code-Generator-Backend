@@ -2,9 +2,46 @@ const QRCode = require('qrcode');
 const sharp = require('sharp');
 const axios = require('axios');
 const validUrl = require('valid-url');
+const Joi = require('joi');
 const { getCache, setCache, manageCacheSize, clearCache } = require('../cache');
 const { CACHE_EXPIRATION_TIME, MAX_CACHE_SIZE } = require('../config');
 
+const schema = Joi.object({
+  url: Joi.string().uri().required().messages({
+    'string.uri': 'The URL must be a valid URL',
+    'any.required': 'The URL is required',
+  }),
+  format: Joi.string().valid('png', 'jpg', 'jpeg').default('png').messages({
+    'any.only': 'The format must be png, jpg or jpeg',
+  }),
+  size: Joi.number().positive().min(100).max(1080).default(200).messages({
+    'number.base': 'The size must be a number',
+    'number.positive': 'The size must be positive',
+    'number.min': 'The size must be at least 100',
+    'number.max': 'The size must be at most 1080',
+  }),
+  errorCorrectionLevel: Joi.string().valid('L', 'M', 'Q', 'H').default('M').messages({
+    'any.only': 'The error correction level must be L, M, Q or H',
+  }),
+  color: Joi.object({
+    dark: Joi.string().pattern(/^#([0-9A-Fa-f]{3}){1,2}$/i).default('#000000').messages({
+      'string.pattern.base': 'The dark color must be a valid hex color',
+    }),
+    light: Joi.string().pattern(/^#([0-9A-Fa-f]{3}){1,2}$/i).default('#FFFFFF').messages({
+      'string.pattern.base': 'The light color must be a valid hex color',
+    }),
+  }),
+  logoUrl: Joi.string().uri().optional().messages({
+    'string.uri': 'The logo URL must be a valid URL',
+    'string.base': 'The logo URL must be a string',
+  }),
+  logoSizeRatio: Joi.number().positive().min(0.1).max(1).default(0.3).messages({
+    'number.base': 'The logo size ratio must be a number',
+    'number.positive': 'The logo size ratio must be positive',
+    'number.min': 'The logo size ratio must be at least 0.1',
+    'number.max': 'The logo size ratio must be at most 1',
+  }),
+});
 
 // Generate QR code and cache it if it doesn't exist in the cache
 const generateQRCode = async (url, options) => {
@@ -78,43 +115,22 @@ const addLogoToQRCode = async (qrCodeBuffer, logoUrl, logoSizeRatio, format, siz
 }
 
 const validateInputs = (url, format, size, errorCorrectionLevel, colors, logoUrl, logoSizeRatio) => {
-  // Validate URL
-  if (!url || !validUrl.isUri(url)) {
-    return { error: 'A valid URL is required' };
-  }
+  const { error, value } = schema.validate({
+    url,
+    format,
+    size,
+    errorCorrectionLevel,
+    color: colors,
+    logoUrl,
+    logoSizeRatio
+  });
 
-  // Validate format
-  // Check if format is one of png, jpeg, jgp
-  const validFormats = ['png', 'jpeg', 'jpg'];
-  if (!validFormats.includes(format)) {
-    return { error: 'Invalid format. Valid values are png, jpeg, jgp' };
+  if (error) {
+    const  errorMessages = error.details.map((detail) => detail.message).join(', ');
+    throw new Error(errorMessages);
   }
-
-  // Validate size
-  // Check if size is a number and between 50 and 1080
-  if (isNaN(size) || size < 50 || size > 1080) {
-    return { error: 'Invalid size. Valid values are between 50 and 1080' };
-  }
-
-  // Validate error correction level
-  // Check if error correction level is one of L, M, Q, H
-  const validCorrectionLevels = ['L', 'M', 'Q', 'H'];
-  if (!validCorrectionLevels.includes(errorCorrectionLevel)) {
-    return { error: 'Invalid error correction level. Valid values are L, M, Q, H' };
-  }
-
-  const isValidHexColor = (color) => /^#([0-9A-F]{3}){1,2}$/i.test(color);
-  if (!isValidHexColor(colors.dark) || !isValidHexColor(colors.light)) {
-    return { error: 'Invalid color. Use hex colors, e.g., #000000' };
-  }
-
-  if (logoUrl && !validUrl.isUri(logoUrl)) {
-    return { error: 'Invalid logo URL. Use a valid URL' };
-  }
-
-  if (isNaN(logoSizeRatio) || logoSizeRatio <= 0 || logoSizeRatio > 1) {
-    return { error: 'Invalid logo size ratio. Valid values are between 0 and 1' };
-  }
+  
+  return value;
 };
 
 module.exports = {

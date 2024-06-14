@@ -12,7 +12,7 @@ const getQRCode = async (req, res, next) => {
       darkColor = '#000000',
       lightColor = '#FFFFFF', 
       logoUrl,
-      logoSizeRatio = 0.2 
+      logoSizeRatio = 0.3 
     } = req.query;
 
     // Validate inputs
