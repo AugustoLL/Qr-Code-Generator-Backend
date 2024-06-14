@@ -1,6 +1,7 @@
 const { generateQRCode, validateInputs } = require('../services/qrCodeService');
 const { clearCache } = require('../cache');
 const { ValidationError, InternalServerError, AppError } = require("../utils/errors");
+const logger = require('../utils/logger');
 
 
 const getQRCode = async (req, res, next) => {
@@ -41,6 +42,7 @@ const getQRCode = async (req, res, next) => {
 
   } catch (error) {
     if (!(error instanceof AppError)) {
+      logger.error("Error generating QR code", error);
       error = new InternalServerError("Error generating QR code");
     }
     next(error);

@@ -1,12 +1,12 @@
 const QRCode = require('qrcode');
 const sharp = require('sharp');
 const axios = require('axios');
-const validUrl = require('valid-url');
-const Joi = require('joi');
+const logger = require('../logger');
 const { getCache, setCache, manageCacheSize, clearCache } = require('../cache');
 const { CACHE_EXPIRATION_TIME, MAX_CACHE_SIZE } = require('../config');
 const { ValidationError, InternalServerError } = require("../utils/errors");
 const qrCodeSchema = require('../validation/qrCodeSchema');
+const logger = require('../logger');
 
 // Generate QR code and cache it if it doesn't exist in the cache
 const generateQRCode = async (url, options) => {
@@ -28,6 +28,8 @@ const generateQRCode = async (url, options) => {
       }
     });
 
+    logger.info(`QR code generated successfully for: ${url}`);
+
     if (logoUrl) {
       // Add logo to QR code
       qrCode = await addLogoToQRCode(qrCodeBuffer, logoUrl, logoSizeRatio || 0.2, format, size);
@@ -39,6 +41,8 @@ const generateQRCode = async (url, options) => {
     // Cache the QR code with expiration time
     manageCacheSize(MAX_CACHE_SIZE);
     setCache(cacheKey, qrCode, CACHE_EXPIRATION_TIME);
+  } else {
+    logger.info(`QR code found in cache for: ${url}`);
   }
 
   return qrCode;
