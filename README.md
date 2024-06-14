@@ -77,6 +77,24 @@ http://localhost:3000/api/generate?url=https://www.linkedin.com/in/augusto-lombi
 
 The server will start on http://localhost:3000 by default.
 
+## Environment Variables
+
+This project uses the following environment variables for configuration:
+
+- `PORT`: The port on which the server runs (default: 3000).
+- `CACHE_EXPIRATION_TIME`: Cache expiration time in seconds (default: 3600).
+- `MAX_CACHE_SIZE`: Maximum cache size (default: 100).
+
+You can define these variables in a `.env` file.
+
+### Example .env File
+
+```plaintext
+PORT=3000
+CACHE_EXPIRATION_TIME=3600
+MAX_CACHE_SIZE=100
+```
+
 ## API Endpoints
 
 ### Generate QR Code

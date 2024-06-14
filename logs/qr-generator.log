@@ -302,3 +302,37 @@
     at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
     at router (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:47:12)
 2024-06-14T18:42:29.780Z [32minfo[39m: QR code generated successfully for: https://youtube.com
+2024-06-14T19:09:36.049Z [31merror[39m: Error: Validation failed: The URL must be a valid URL
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:14:13)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:47:12)
+2024-06-14T19:09:41.780Z [31merror[39m: Error: Validation failed: The URL must be a valid URL
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:14:13)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:47:12)
+2024-06-14T19:09:50.687Z [31merror[39m: Error: Validation failed: "darkColor" is not allowed
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:14:13)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:47:12)
+2024-06-14T19:09:59.310Z [32minfo[39m: QR code generated successfully for: https://youtube.com
