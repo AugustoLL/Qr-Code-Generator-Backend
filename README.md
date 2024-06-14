@@ -31,6 +31,20 @@ This is a simple QR code generator made with Node.js and Express.
 - Cache QR codes for improved performance
 - Clear cache manually through API endpoint
 
+## Examples
+
+### Example 1: Simple Black and White QR Code
+
+![Github repo QR Code](examples/githubRepoQRCode.png)
+
+### Example 2: Red and Black QR Code with YouTube Logo
+
+![YouTube QR Code](examples/youtubeQRCode.png)
+
+### Example 3: White and Light-Blue QR Code with LinkedIn Logo
+
+![YouTube QR Code](examples/linkedInQRCode.png)
+
 ## Installation
 
 1. Clone the repository:

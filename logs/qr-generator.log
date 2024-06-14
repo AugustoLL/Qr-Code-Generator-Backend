@@ -191,3 +191,68 @@
 2024-06-14T15:54:42.179Z [32minfo[39m: QR code generated successfully for: https://youtube.com
 2024-06-14T15:54:52.123Z [32minfo[39m: QR code generated successfully for: https://youtube.com
 2024-06-14T15:55:06.988Z [32minfo[39m: QR code generated successfully for: https://youtube.com
+2024-06-14T18:10:15.027Z [32minfo[39m: QR code generated successfully for: https://www.linkedin.com/in/augusto-lombino-218bba18b
+2024-06-14T18:10:42.932Z [31merror[39m: Error: The dark color must be a valid hex color
+    at validateInputs (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\services\qrCodeService.js:98:11)
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:22:5)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+2024-06-14T18:11:02.807Z [31merror[39m: Error: The dark color must be a valid hex color
+    at validateInputs (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\services\qrCodeService.js:98:11)
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:22:5)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+2024-06-14T18:11:14.494Z [31merror[39m: Error: The dark color must be a valid hex color
+    at validateInputs (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\services\qrCodeService.js:98:11)
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:22:5)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+2024-06-14T18:11:26.127Z [31merror[39m: Error: The dark color must be a valid hex color
+    at validateInputs (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\services\qrCodeService.js:98:11)
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:22:5)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+2024-06-14T18:12:26.795Z [31merror[39m: Error: The logo size ratio must be a number
+    at validateInputs (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\services\qrCodeService.js:98:11)
+    at getQRCode (C:\Users\Augusto\Documents\Proyectos\qr-generator\src\controller\qrCodeController.js:22:5)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+2024-06-14T18:12:33.614Z [32minfo[39m: QR code generated successfully for: https://www.linkedin.com/in/augusto-lombino-218bba18b
+2024-06-14T18:13:22.409Z [32minfo[39m: QR code generated successfully for: https://www.linkedin.com/in/augusto-lombino-218bba18b
+2024-06-14T18:14:32.974Z [32minfo[39m: QR code generated successfully for: https://github.com/AugustoLL/Qr-Code-Generator-Backend
+2024-06-14T18:15:41.217Z [32minfo[39m: QR code found in cache for: https://www.linkedin.com/in/augusto-lombino-218bba18b
+2024-06-14T18:15:48.866Z [32minfo[39m: QR code found in cache for: https://www.linkedin.com/in/augusto-lombino-218bba18b
+2024-06-14T18:15:55.733Z [32minfo[39m: QR code found in cache for: https://www.linkedin.com/in/augusto-lombino-218bba18b
+2024-06-14T18:16:42.511Z [32minfo[39m: QR code found in cache for: https://www.linkedin.com/in/augusto-lombino-218bba18b
+2024-06-14T18:16:47.924Z [32minfo[39m: QR code found in cache for: https://www.linkedin.com/in/augusto-lombino-218bba18b
+2024-06-14T18:17:02.089Z [32minfo[39m: QR code generated successfully for: https://www.linkedin.com/in/augusto-lombino-218bba18b
