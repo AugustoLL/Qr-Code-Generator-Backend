@@ -31,7 +31,7 @@ const generateQRCode = async (url, options) => {
 
     if (logoUrl) {
       // Add logo to QR code
-      qrCode = await addLogoToQRCode(qrCodeBuffer, logoUrl, logoSizeRatio || 0.2, format, size);
+      qrCode = await addLogoToQRCode(qrCodeBuffer, logoUrl, logoSizeRatio || 0.2, format, size, color.light);
     } else {
       // Convert QR code to base64
       qrCode = `data:image/${format};base64,${qrCodeBuffer.toString('base64')}`;
@@ -47,7 +47,7 @@ const generateQRCode = async (url, options) => {
   return qrCode;
 };
 
-const addLogoToQRCode = async (qrCodeBuffer, logoUrl, logoSizeRatio, format, size) => {
+const addLogoToQRCode = async (qrCodeBuffer, logoUrl, logoSizeRatio, format, size, backgroundColor = '#FFFFFF') => {
   // Fetch the logo image from the URL
   const response = await axios.get(logoUrl, { responseType: 'arraybuffer' });
   const logoImageBuffer = Buffer.from(response.data, 'binary');
@@ -63,7 +63,7 @@ const addLogoToQRCode = async (qrCodeBuffer, logoUrl, logoSizeRatio, format, siz
     .composite([{
       input: Buffer.from(
         `<svg width="${size}" height="${size}">
-          <rect x="${(size - logoSize) / 2}" y="${(size - logoSize) / 2}" width="${logoSize}" height="${logoSize}" fill="white"/>
+          <rect x="${(size - logoSize) / 2}" y="${(size - logoSize) / 2}" width="${logoSize}" height="${logoSize}" fill="${backgroundColor}"/>
         </svg>`
       ),
       gravity: 'center',

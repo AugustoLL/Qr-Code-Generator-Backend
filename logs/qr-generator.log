@@ -184,3 +184,10 @@
     at Function.process_params (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:346:12)
     at next (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:280:10)
     at Function.handle (C:\Users\Augusto\Documents\Proyectos\qr-generator\node_modules\express\lib\router\index.js:175:3)
+2024-06-14T15:50:43.745Z [32minfo[39m: QR code generated successfully for: https://youtube.com
+2024-06-14T15:51:14.230Z [32minfo[39m: QR code generated successfully for: https://youtube.com
+2024-06-14T15:51:23.823Z [32minfo[39m: QR code generated successfully for: https://youtube.com
+2024-06-14T15:54:32.575Z [32minfo[39m: QR code generated successfully for: https://youtube.com
+2024-06-14T15:54:42.179Z [32minfo[39m: QR code generated successfully for: https://youtube.com
+2024-06-14T15:54:52.123Z [32minfo[39m: QR code generated successfully for: https://youtube.com
+2024-06-14T15:55:06.988Z [32minfo[39m: QR code generated successfully for: https://youtube.com
