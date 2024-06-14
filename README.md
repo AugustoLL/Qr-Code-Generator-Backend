@@ -15,6 +15,7 @@
 [![sharp Version](https://img.shields.io/badge/sharp-v0.33.4-blue?style=for-the-badge&logo=sharp)](https://www.npmjs.com/package/sharp/v/0.33.4)
 [![valid-url Version](https://img.shields.io/badge/valid--url-v1.0.9-blue?style=for-the-badge)](https://www.npmjs.com/package/valid-url/v/1.0.9)
 [![winston Version](https://img.shields.io/badge/winston-v3.13.0-blue?style=for-the-badge)](https://www.npmjs.com/package/winston/v/3.13.0)
+[![winston-daily-rotate-file Version](https://img.shields.io/badge/winston-daily-rotate-file-v5.0.0-blue?style=for-the-badge)](https://www.npmjs.com/package/winston-daily-rotate-file/v/5.0.0)
 
 This is a simple QR code generator made with Node.js and Express.
 
