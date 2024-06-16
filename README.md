@@ -61,7 +61,7 @@ http://localhost:3000/api/generate?url=https://www.linkedin.com/in/augusto-lombi
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/qr-code-generator.git
+    git clone https://github.com/AugustoLL/Qr-Code-Generator-Backend.git
     cd qr-code-generator
     ```
 
