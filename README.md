@@ -134,7 +134,7 @@ Clears the cached QR codes stored for improved performance.
 
 To generate a QR code, open your browser and navigate to:
 
-http://localhost:3000/generate?url=YOUR_URL&format=png&size=200
+http://localhost:3000/api/generate?url=YOUR_URL&format=png&size=200
 
 Replace `YOUR_URL` with the URL you want to encode.
 
