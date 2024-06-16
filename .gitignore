@@ -13,3 +13,4 @@
 
 # logs
 /logs
+/logs/*.log
