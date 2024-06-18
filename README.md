@@ -36,7 +36,7 @@ This is a simple QR code generator made with Node.js and Express.
 ### Example 1: Simple Black and White QR Code
 
 ```sh
-http://localhost:3000/api/generate?url=https://github.com/AugustoLL/Qr-Code-Generator-Backend&format=png&size=500&errorCorrectionLevel=H
+http://localhost:8080/api/generate?url=https://github.com/AugustoLL/Qr-Code-Generator-Backend&format=png&size=500&errorCorrectionLevel=H
 ```
 
 <img src="examples/githubRepoQRCode.png" alt="Github repo QR Code" width="300" />
@@ -44,7 +44,7 @@ http://localhost:3000/api/generate?url=https://github.com/AugustoLL/Qr-Code-Gene
 ### Example 2: Red and Black QR Code with YouTube Logo
 
 ```sh
-http://localhost:3000/api/generate?url=https://youtube.com&format=png&size=500&errorCorrectionLevel=H&darkColor=%23FF0000&lightColor=%23000000&logoUrl=https://clipart-library.com/images_k/youtube-transparent-png/youtube-transparent-png-15.png
+http://localhost:8080/api/generate?url=https://youtube.com&format=png&size=500&errorCorrectionLevel=H&darkColor=%23FF0000&lightColor=%23000000&logoUrl=https://clipart-library.com/images_k/youtube-transparent-png/youtube-transparent-png-15.png
 ```
 
 <img src="examples/youtubeQRCode.png" alt="YouTube QR Code" width="300" />
@@ -52,7 +52,7 @@ http://localhost:3000/api/generate?url=https://youtube.com&format=png&size=500&e
 ### Example 3: White and Light-Blue QR Code with LinkedIn Logo
 
 ```sh
-http://localhost:3000/api/generate?url=https://www.linkedin.com/in/augusto-lombino-218bba18b&format=png&size=500&errorCorrectionLevel=H&darkColor=%231686B0&lightColor=%23FFFFFF&logoUrl=https://sydneysocialmediamanagers.com.au/wp-content/uploads/2017/03/Linkedin-logo.png&logoSizeRatio=0.2
+http://localhost:8080/api/generate?url=https://www.linkedin.com/in/augusto-lombino-218bba18b&format=png&size=500&errorCorrectionLevel=H&darkColor=%231686B0&lightColor=%23FFFFFF&logoUrl=https://sydneysocialmediamanagers.com.au/wp-content/uploads/2017/03/Linkedin-logo.png&logoSizeRatio=0.2
 ```
 
 <img src="examples/linkedInQRCode.png" alt="LinkedIn Profile QR Code" width="300" />
@@ -75,13 +75,13 @@ http://localhost:3000/api/generate?url=https://www.linkedin.com/in/augusto-lombi
     npm start
     ```
 
-The server will start on http://localhost:3000 by default.
+The server will start on http://localhost:8080 by default.
 
 ## Environment Variables
 
 This project uses the following environment variables for configuration:
 
-- `PORT`: The port on which the server runs (default: 3000).
+- `PORT`: The port on which the server runs (default: 8080).
 - `CACHE_EXPIRATION_TIME`: Cache expiration time in seconds (default: 3600).
 - `MAX_CACHE_SIZE`: Maximum cache size (default: 100).
 
@@ -90,7 +90,7 @@ You can define these variables in a `.env` file.
 ### Example .env File
 
 ```plaintext
-PORT=3000
+PORT=8080
 CACHE_EXPIRATION_TIME=3600
 MAX_CACHE_SIZE=100
 ```
@@ -117,7 +117,7 @@ GET /api/generate
 #### Example
 
 ```sh
-http://localhost:3000/api/generate?url=https://example.com&format=png&size=300&errorCorrectionLevel=M&darkColor=%230000FF&lightColor=%23FFFF00
+http://localhost:8080/api/generate?url=https://example.com&format=png&size=300&errorCorrectionLevel=M&darkColor=%230000FF&lightColor=%23FFFF00
 ```
 
 ### Clear Cache
@@ -134,7 +134,7 @@ Clears the cached QR codes stored for improved performance.
 
 To generate a QR code, open your browser and navigate to:
 
-http://localhost:3000/api/generate?url=YOUR_URL&format=png&size=200
+http://localhost:8080/api/generate?url=YOUR_URL&format=png&size=200
 
 Replace `YOUR_URL` with the URL you want to encode.
 
@@ -149,13 +149,13 @@ docker build -t qr-code-generator .
 ### Run Docker Container
 
 ```bash
-docker run --env-file .env -p 3000:3000 qr-code-generator
+docker run --env-file .env -p 8080:8080 qr-code-generator
 ```
 
 Alternatively, you can pass individual environment variables directly:
 
 ```bash
-docker run -e NODE_ENV=production -e API_KEY=your_api_key_here -p 3000:3000 qr-code-generator
+docker run -e NODE_ENV=production -e API_KEY=your_api_key_here -p 8080:8080 qr-code-generator
 ```
 
 ### Docker Compose
