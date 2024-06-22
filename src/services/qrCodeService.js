@@ -9,42 +9,49 @@ const qrCodeSchema = require('../validation/qrCodeSchema');
 
 // Generate QR code and cache it if it doesn't exist in the cache
 const generateQRCode = async (url, options) => {
-  const { format, size, errorCorrectionLevel, color, logoUrl, logoSizeRatio } = options;
-  const cacheKey = `${url}_${format}_${size}_${errorCorrectionLevel}_${color}_${logoUrl}_${logoSizeRatio}`;
+  try {
+    url = decodeURIComponent(url);
+    const { format, size, errorCorrectionLevel, color, logoUrl, logoSizeRatio } = options;
+    
+    const cacheKey = `${url}_${format}_${size}_${errorCorrectionLevel}_${color}_${logoUrl}_${logoSizeRatio}`;
 
-  // Check if the QR code already exists in the cache
-  let qrCode = getCache(cacheKey);
+    // Check if the QR code already exists in the cache
+    let qrCode = getCache(cacheKey);
 
-  if (!qrCode) {
-    // Generate QR code
-    const qrCodeBuffer = await QRCode.toBuffer(url, {
-      type: format,
-      width: size,
-      errorCorrectionLevel: errorCorrectionLevel,
-      color: {
-        dark: color.dark || '#000000',
-        light: color.light || '#FFFFFF'
+    if (!qrCode) {
+      // Generate QR code
+      const qrCodeBuffer = await QRCode.toBuffer(url, {
+        type: format,
+        width: size,
+        errorCorrectionLevel: errorCorrectionLevel,
+        color: {
+          dark: color.dark || '#000000',
+          light: color.light || '#FFFFFF'
+        }
+      });
+
+      logger.info(`QR code generated successfully for: ${url}`);
+
+      if (logoUrl) {
+        // Add logo to QR code
+        qrCode = await addLogoToQRCode(qrCodeBuffer, logoUrl, logoSizeRatio || 0.2, format, size, color.light);
+      } else {
+        // Convert QR code to base64
+        qrCode = `data:image/${format};base64,${qrCodeBuffer.toString('base64')}`;
       }
-    });
 
-    logger.info(`QR code generated successfully for: ${url}`);
-
-    if (logoUrl) {
-      // Add logo to QR code
-      qrCode = await addLogoToQRCode(qrCodeBuffer, logoUrl, logoSizeRatio || 0.2, format, size, color.light);
+      // Cache the QR code with expiration time
+      manageCacheSize(MAX_CACHE_SIZE);
+      setCache(cacheKey, qrCode, CACHE_EXPIRATION_TIME);
     } else {
-      // Convert QR code to base64
-      qrCode = `data:image/${format};base64,${qrCodeBuffer.toString('base64')}`;
+      logger.info(`QR code found in cache for: ${url}`);
     }
 
-    // Cache the QR code with expiration time
-    manageCacheSize(MAX_CACHE_SIZE);
-    setCache(cacheKey, qrCode, CACHE_EXPIRATION_TIME);
-  } else {
-    logger.info(`QR code found in cache for: ${url}`);
+    return qrCode;
+  } catch (error) {
+    logger.error(`Error generating QR code: ${error}`);
+    throw new InternalServerError("Error generating QR code");
   }
-
-  return qrCode;
 };
 
 const addLogoToQRCode = async (qrCodeBuffer, logoUrl, logoSizeRatio, format, size, backgroundColor = '#FFFFFF') => {

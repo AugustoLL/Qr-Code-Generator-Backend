@@ -5,6 +5,7 @@ const limiter = require('./middlewares/rateLimiter');
 const { PORT } = require('./config');
 const logger = require('./utils/logger');
 const errorHandler = require('./middlewares/errorHandler');
+const cors = require('cors');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('combined'));
 // Rate limiter
 app.use(limiter);
+app.use(cors());
 
 // Routes
 app.use('/api', qrCodeRoutes);
