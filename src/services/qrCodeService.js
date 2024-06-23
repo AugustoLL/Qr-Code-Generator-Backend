@@ -10,10 +10,9 @@ const qrCodeSchema = require('../validation/qrCodeSchema');
 // Generate QR code and cache it if it doesn't exist in the cache
 const generateQRCode = async (url, options) => {
   try {
-    url = decodeURIComponent(url);
     const { format, size, errorCorrectionLevel, color, logoUrl, logoSizeRatio } = options;
     
-    const cacheKey = `${url}_${format}_${size}_${errorCorrectionLevel}_${color}_${logoUrl}_${logoSizeRatio}`;
+    const cacheKey = `${url}_${format}_${size}_${errorCorrectionLevel}_${JSON.stringify(color)}_${logoUrl}_${logoSizeRatio}`;
 
     // Check if the QR code already exists in the cache
     let qrCode = getCache(cacheKey);
@@ -101,6 +100,7 @@ const validateInputs = (url, format, size, errorCorrectionLevel, colors, logoUrl
   });
 
   if (error) {
+    logger.error(`Validation error: \n-Url: ${url} \n-Format: ${format} \n-Size: ${size} \n-Error correction level: ${errorCorrectionLevel} \n-Colors: ${JSON.stringify(colors)} \n-Logo URL: ${logoUrl} \n-Logo size ratio: ${logoSizeRatio}`);
     const  errorMessages = error.details.map((detail) => detail.message).join(', ');
     throw new ValidationError(errorMessages);
   }

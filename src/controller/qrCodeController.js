@@ -19,12 +19,11 @@ const getQRCode = async (req, res, next) => {
       logoSizeRatio = 0.3 
     } = req.query;
 
+    url = decodeURIComponent(url);
     darkColor = decodeURIComponent(darkColor);
     lightColor = decodeURIComponent(lightColor);
 
-    logger.info('Received parameters:', {
-      url, format, size, errorCorrectionLevel, darkColor, lightColor, logoUrl, logoSizeRatio
-    });
+    logger.info(`Received parameters: url=${url}, format=${format}, size=${size}, errorCorrectionLevel=${errorCorrectionLevel}, darkColor=${darkColor}, lightColor=${lightColor}, logoUrl=${logoUrl}, logoSizeRatio=${logoSizeRatio}`);
 
     // Validate inputs
     validateInputs(url, format, size, errorCorrectionLevel, { dark: darkColor, light: lightColor }, logoUrl, logoSizeRatio);
@@ -38,7 +37,7 @@ const getQRCode = async (req, res, next) => {
       logoSizeRatio: parseFloat(logoSizeRatio)
     };
 
-    logger.info('Options after validation:', options);
+    logger.info(`Options after validation: format=${options.format}, size=${options.size}, errorCorrectionLevel=${options.errorCorrectionLevel}, color=${JSON.stringify(options.color)}, logoUrl=${options.logoUrl}, logoSizeRatio=${options.logoSizeRatio}`);
 
     // Generate QR code
     const qrCode = await generateQRCode(url, options);
