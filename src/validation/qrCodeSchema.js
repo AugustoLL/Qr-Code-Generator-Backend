@@ -18,7 +18,7 @@ const qrCodeSchema = Joi.object({
     'number.min': 'The size must be at least 100',
     'number.max': 'The size must be at most 1080',
   }),
-  errorCorrectionLevel: Joi.string().valid('L', 'M', 'Q', 'H').default('M').messages({
+  errorCorrectionLevel: Joi.string().valid('L', 'M', 'Q', 'H').default('H').messages({
     'string.base': 'The error correction level must be a string',
     'any.only': 'The error correction level must be L, M, Q or H',
   }),
@@ -36,11 +36,11 @@ const qrCodeSchema = Joi.object({
     'string.base': 'The logo URL must be a string',
     'string.uri': 'The logo URL must be a valid URL',
   }),
-  logoSizeRatio: Joi.number().positive().min(0.1).max(1).default(0.3).messages({
+  logoSizeRatio: Joi.number().positive().min(0.1).max(0.35).default(0.2).messages({
     'number.base': 'The logo size ratio must be a number',
     'number.positive': 'The logo size ratio must be positive',
     'number.min': 'The logo size ratio must be at least 0.1',
-    'number.max': 'The logo size ratio must be at most 1',
+    'number.max': 'The logo size ratio must be at most 0.35',
   }),
   style: Joi.string().valid('default', 'rounded', 'smooth').default('default').messages({
     'string.base': 'Style must be a string',
