@@ -1,5 +1,10 @@
 node_modules
-npm-debug.log
 logs
 examples
+test
+*.log
+*.md
+.DS_Store
+.git
+.gitignore
 .env
