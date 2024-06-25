@@ -1,8 +1,12 @@
 version: '3'
 services:
-  qr-code-generator:
+  qr-code-generator-backend:
     build: .
     ports:
       - "${PORT}:${PORT}"
+    environment:
+      - PORT=${PORT}
+      - CACHE_EXPIRATION_TIME=${CACHE_EXPIRATION_TIME}
+      - MAX_CACHE_SIZE=${MAX_CACHE_SIZE}
     env_file:
       - .env
