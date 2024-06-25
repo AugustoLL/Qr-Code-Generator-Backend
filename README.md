@@ -1,4 +1,4 @@
-# QR Generator
+# QR Code Generator Backend
 
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-v20.11.0-green?style=for-the-badge&logo=node.js)](https://nodejs.org/)
@@ -19,7 +19,7 @@
 
 This is a simple QR code generator made with Node.js and Express.
 
-## Features
+## ❗️ Features
 
 - Generate QR codes with customizable options:
 - - URL to encode
@@ -31,7 +31,7 @@ This is a simple QR code generator made with Node.js and Express.
 - Cache QR codes for improved performance
 - Clear cache manually through API endpoint
 
-## Examples
+## 🖼️ Examples
 
 ### Example 1: Simple Black and White QR Code
 
@@ -57,7 +57,7 @@ http://localhost:8080/api/generate?url=https://www.linkedin.com/in/augusto-lombi
 
 <img src="examples/linkedInQRCode.png" alt="LinkedIn Profile QR Code" width="300" />
 
-## Installation
+## 🔨 Installation
 
 1. Clone the repository:
     ```sh
@@ -77,7 +77,7 @@ http://localhost:8080/api/generate?url=https://www.linkedin.com/in/augusto-lombi
 
 The server will start on http://localhost:8080 by default.
 
-## Environment Variables
+## 🌎 Environment Variables
 
 This project uses the following environment variables for configuration:
 
@@ -95,7 +95,7 @@ CACHE_EXPIRATION_TIME=3600
 MAX_CACHE_SIZE=100
 ```
 
-## API Endpoints
+## 🌐 API Endpoints
 
 ### Generate QR Code
 
@@ -130,7 +130,7 @@ GET /api/clear-cache
 
 Clears the cached QR codes stored for improved performance.
 
-## Usage
+## 📐 Usage
 
 To generate a QR code, open your browser and navigate to:
 
@@ -138,18 +138,24 @@ http://localhost:8080/api/generate?url=YOUR_URL&format=png&size=200
 
 Replace `YOUR_URL` with the URL you want to encode.
 
-## Docker Setup
+## 📦 Docker Setup
+
+### Clone the repository:
+```sh
+git clone https://github.com/your-username/qr-code-generator-frontend.git
+cd qr-code-generator-frontend
+```
 
 ### Build Docker Image
 
 ```bash
-docker build -t qr-code-generator .
+docker build -t qr-code-generator-backend .
 ```
 
 ### Run Docker Container
 
 ```bash
-docker run --env-file .env -p 8080:8080 qr-code-generator
+docker run --env-file .env -p 8080:8080 qr-code-generator-backend
 ```
 
 Alternatively, you can pass individual environment variables directly:
