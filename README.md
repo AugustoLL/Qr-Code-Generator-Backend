@@ -140,12 +140,6 @@ Replace `YOUR_URL` with the URL you want to encode.
 
 ## 📦 Docker Setup
 
-### Clone the repository:
-```sh
-git clone https://github.com/your-username/qr-code-generator-frontend.git
-cd qr-code-generator-frontend
-```
-
 ### Build Docker Image
 
 ```bash
