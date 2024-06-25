@@ -22,7 +22,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('combined'));
 // Rate limiter
 app.use(limiter);
-app.use(cors());
+// Setup CORS
+const corsOptions = {
+    // origin: 'http://qr-code-generator-frontend:3000',
+    // methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    origin: ['http://localhost:3000', 'http://192.168.*.*:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+}
+app.use(cors(corsOptions));
 
 // Routes
 app.use('/api', qrCodeRoutes);
@@ -33,4 +41,5 @@ app.use(errorHandler);
 // Start server
 app.listen(PORT, () => {
     logger.info(`Server is running on port: ${PORT}`);
+    logger.info(`CORS options: ${JSON.stringify(corsOptions)}`);
 });
