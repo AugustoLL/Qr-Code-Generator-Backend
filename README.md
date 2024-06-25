@@ -31,6 +31,24 @@ This is a simple QR code generator made with Node.js and Express.
 - Cache QR codes for improved performance
 - Clear cache manually through API endpoint
 
+## ❕ Yet to implement
+- Change the style of the shapes of the QR Code
+- Allow QR Codes for 
+- - contact: 
+- - - name: name, last name
+- - - contact: mobile number, phone number, fax, email
+- - - company: company, job
+- - - street
+- - - city: name, zip
+- - - state
+- - - country
+- - - website
+- - wifi: network name, password, encryption (none, wpa/wpa2, wep)
+- - emails: address, subject, message
+- - sms: number, message
+- Allow for gradients when setting the colors
+- Add Dynamic QR Codes (codes that can be updated without changing the printed code)
+
 ## 🖼️ Examples
 
 ### Example 1: Simple Black and White QR Code
