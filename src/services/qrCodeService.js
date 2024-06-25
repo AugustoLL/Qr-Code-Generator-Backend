@@ -2,7 +2,7 @@ const QRCode = require('qrcode');
 const sharp = require('sharp');
 const axios = require('axios');
 const logger = require('../logger');
-const { getCache, setCache, manageCacheSize, clearCache } = require('../cache');
+const { getCache, setCache, manageCacheSize } = require('../cache');
 const { CACHE_EXPIRATION_TIME, MAX_CACHE_SIZE } = require('../config');
 const { ValidationError, InternalServerError } = require("../utils/errors");
 const qrCodeSchema = require('../validation/qrCodeSchema');
@@ -61,6 +61,7 @@ const addLogoToQRCode = async (qrCodeBuffer, logoUrl, logoSizeRatio, format, siz
   const qrImage = sharp(qrCodeBuffer);
   const logoImage = sharp(logoImageBuffer);
 
+  // Get the width of the QR code
   const { width } = await qrImage.metadata();
   const logoSize = Math.floor(width * logoSizeRatio);
 

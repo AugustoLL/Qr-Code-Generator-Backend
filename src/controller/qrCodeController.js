@@ -11,12 +11,12 @@ const getQRCode = async (req, res, next) => {
     let { 
       url,
       format = 'png',
-      size = 200,
-      errorCorrectionLevel = 'M',
+      size = 500,
+      errorCorrectionLevel = 'H',
       darkColor = '#000000',
       lightColor = '#FFFFFF', 
       logoUrl,
-      logoSizeRatio = 0.3 
+      logoSizeRatio = 0.2
     } = req.query;
 
     url = decodeURIComponent(url);

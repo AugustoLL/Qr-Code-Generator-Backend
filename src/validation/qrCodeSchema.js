@@ -11,7 +11,7 @@ const qrCodeSchema = Joi.object({
     'string.base': 'The format must be a string',
     'any.only': 'The format must be png, jpg or jpeg',
   }),
-  size: Joi.number().positive().integer().min(100).max(1080).default(200).messages({
+  size: Joi.number().positive().integer().min(100).max(1080).default(500).messages({
     'number.base': 'The size must be a number',
     'number.positive': 'The size must be positive',
     'number.integer': 'The size must be an integer',
