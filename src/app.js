@@ -23,14 +23,21 @@ app.use(morgan('combined'));
 // Rate limiter
 app.use(limiter);
 // Setup CORS
+// const corsOptions = {
+//     // origin: 'http://qr-code-generator-frontend:3000',
+//     // methods: ['GET', 'POST', 'OPTIONS'],
+//     origin: ['http://localhost:3000', 'http://192.168.*.*:3000'],
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type'],
+// }
 const corsOptions = {
-    // origin: 'http://qr-code-generator-frontend:3000',
-    // methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    origin: ['http://localhost:3000', 'http://192.168.*.*:3000'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
-}
-app.use(cors(corsOptions));
+    origin: ['https://localhost:3000', 'http://frontend:3000', 'https://qr-code-generator-frontend:3000'], // Adjust as needed
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['DNT', 'User-Agent', 'X-Requested-With', 'If-Modified-Since', 'Cache-Control', 'Content-Type', 'Range'],
+    credentials: true,  // Enable CORS credentials  
+    maxAge: 1728000  // 20 days in seconds
+  };
+app.use(cors());
 
 // Routes
 app.use('/api', qrCodeRoutes);
