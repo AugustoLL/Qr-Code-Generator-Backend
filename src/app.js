@@ -48,5 +48,5 @@ app.use(errorHandler);
 // Start server
 app.listen(PORT, () => {
     logger.info(`Server is running on port: ${PORT}`);
-    logger.info(`CORS options: ${JSON.stringify(corsOptions)}`);
+    // logger.info(`CORS options: ${JSON.stringify(corsOptions)}`);
 });
